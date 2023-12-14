@@ -1,0 +1,41 @@
+{
+  "name": "",
+  "avatar": "custom_bot_avatar.png",
+  "description": "",
+  "instruction": "",
+  "prompt_recommend": [
+    "你可以做什么？",
+    "你有什么功能？",
+    "如何使用你的功能？",
+    "能否给我一些示例指令？"
+  ],
+  "knowledge": [],
+  "tools": {
+    "image_gen": {
+      "name": "Wanx Image Generation",
+      "is_active": true,
+      "use": true
+    },
+    "code_interpreter": {
+      "name": "Code Interpreter",
+      "is_active": true,
+      "use": true
+    },
+    "qwen_vl": {
+      "name": "Qwen-VL识图",
+      "is_active": true,
+      "use": true
+    },
+    "web_browser": {
+      "name": "Web Browsing",
+      "is_active": true,
+      "use": true
+    },
+    "modelscope_speech-generation": {
+      "name": "Speech Generation",
+      "is_active": true,
+      "use": true
+    }
+  },
+  "model": "qwen-max"
+}

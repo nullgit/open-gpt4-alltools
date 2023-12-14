@@ -28,4 +28,4 @@ soundfile
 transformers>=4.29.0
 transformers_stream_generator
 
-modelscope[audio]
+# modelscope[audio]

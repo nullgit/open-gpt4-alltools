@@ -19,6 +19,7 @@ from .translation_zh2en_tool import TranslationZh2EnTool
 from .web_browser import WebBrowser
 from .web_search import WebSearch
 from .wordart_tool import WordArtTexture
+from .doc_tool import DocTool
 
 TOOL_INFO_LIST = {
     'modelscope_text-translation-zh2en': 'TranslationZh2EnTool',
@@ -37,4 +38,5 @@ TOOL_INFO_LIST = {
     'web_browser': 'WebBrowser',
     'qwen_vl': 'QWenVL',
     'style_repaint': 'StyleRepaint',
+    'doc_search': 'DocTool',
 }

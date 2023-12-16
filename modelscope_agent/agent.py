@@ -177,7 +177,7 @@ class AgentExecutor:
 
         # retrieve tools
         tool_list = self.retrieve_tools(task)
-        knowledge_list = self.get_knowledge(task, append_files)
+        knowledge_list = []  # self.get_knowledge(task, append_files)
 
         self.prompt_generator.init_prompt(
             task, tool_list, knowledge_list, append_files=append_files)
@@ -203,7 +203,7 @@ class AgentExecutor:
                 logger.info(
                     uuid=kwargs.get('uuid', 'default_user'),
                     message=f'LLM inputs in round {idx}',
-                    content={'llm_artifacts': llm_artifacts, 'output': llm_result})
+                    content={'llm_artifacts': llm_artifacts, })
 
             # parse and get tool name and arguments
             try:
@@ -269,7 +269,7 @@ class AgentExecutor:
 
         # retrieve tools
         tool_list = self.retrieve_tools(task)
-        knowledge_list = self.get_knowledge(task, append_files)
+        knowledge_list = []  # self.get_knowledge(task, append_files)
 
         self.prompt_generator.init_prompt(
             task,
@@ -291,7 +291,7 @@ class AgentExecutor:
                 logger.info(
                     uuid=kwargs.get('uuid', 'default_user'),
                     message=f'LLM inputs in round {idx}',
-                    content={'llm_artifacts': llm_artifacts, 'output': llm_result})
+                    content={'llm_artifacts': llm_artifacts})
 
             llm_result = ''
             try:
@@ -305,6 +305,13 @@ class AgentExecutor:
                 yield {'llm_text': s}
             except Exception as e:
                 yield {'llm_text': str(e)}
+
+            if print_info:
+                logger.info(
+                    uuid=kwargs.get('uuid', 'default_user'),
+                    message=f'LLM outputs in round {idx}',
+                    content={'outputs': llm_result}
+                )
 
             # parse and get tool name and arguments
             try:
@@ -363,8 +370,7 @@ class AgentExecutor:
                 true_arg = self.agent_state.get(arg, arg)
             except Exception as e:
                 logger.error(
-                    error=
-                    f'Error when parsing action args: {e}, using fall back')
+                    error=f'Error when parsing action args: {e}, using fall back')
                 true_arg = arg
             parsed_action_args[name] = true_arg
         return parsed_action_args

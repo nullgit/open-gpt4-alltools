@@ -160,7 +160,7 @@ class CustomPromptGenerator(PromptGenerator):
 
             if len(append_files) > 0:
                 file_names = ','.join(
-                    [os.path.basename(path) for path in append_files])
+                    [f'"{path}"' for path in append_files])
                 user_input = user_input.replace('<file_names>',
                                                 f'[上传文件{file_names}]')
             else:

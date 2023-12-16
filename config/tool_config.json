@@ -3,7 +3,7 @@
     "name": "Image Generation",
     "is_active": true,
     "use": true,
-    "is_remote_tool": false
+    "is_remote_tool": true
   },
   "code_interpreter": {
     "name": "Code Interpreter",
@@ -46,6 +46,11 @@
   },
   "modelscope_speech-generation": {
     "name": "Speech Generation",
+    "is_active": true,
+    "use": true
+  },
+  "doc_search": {
+    "name": "文档相关信息搜索",
     "is_active": true,
     "use": true
   }

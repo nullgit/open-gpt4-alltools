@@ -9,6 +9,7 @@
     "请画一个爱心",
     "搜索一下贵州茅台最近的新闻"
   ],
+  "language": "zh",
   "knowledge": [],
   "tools": {
     "code_interpreter": {
@@ -24,6 +25,11 @@
     },
     "web_browser": {
       "name": "Web Browsing",
+      "is_active": true,
+      "use": true
+    },
+    "doc_search": {
+      "name": "Document Search",
       "is_active": true,
       "use": true
     },

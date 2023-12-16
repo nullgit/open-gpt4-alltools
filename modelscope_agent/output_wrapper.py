@@ -115,12 +115,13 @@ class AudioWrapper(OutputWrapper):
         else:
             self._raw_data = audio
             directory = tempfile.mkdtemp(dir=self.root_path)
-            self._path = os.path.join(directory, str(uuid.uuid4()) + '.wav')
+            name =  str(uuid.uuid4()) + '.wav'
+            self._path = os.path.join(directory, name)
 
             with open(self._path, 'wb') as f:
                 f.write(self._raw_data)
 
-        self._path = path2url(self._path)
+        self._path = path2url(self._path, name)
         self._repr = f'<audio id=audio controls= preload=none> <source id=wav src={self._path}> </audio>'
 
 

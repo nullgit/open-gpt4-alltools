@@ -44,7 +44,7 @@ def path2url(local_file_path, oss_file_path):
     auth = oss2.Auth(ak_id, ak_secret)
     bucket = oss2.Bucket(auth, endpoint, bucket_name)
     file_url = upload_to_oss(bucket, local_file_path,
-                             f'agents/user/{oss_file_path}')
+                             f'agents/{oss_file_path}')
     return file_url
 
 if __name__ == '__main__':

@@ -2,12 +2,12 @@
   "name": "",
   "avatar": "custom_bot_avatar.png",
   "description": "",
-  "instruction": "",
+  "instruction": "你是OpenAI公司开发的超强人工智能GPT40，你有很多工具可以用，能回答并帮助用户",
   "prompt_recommend": [
-    "你可以做什么？",
-    "你有什么功能？",
-    "如何使用你的功能？",
-    "能否给我一些示例指令？"
+    "请用语音告诉我你有什么功能？",
+    "请帮我生成一张XX的图片",
+    "请画一个爱心",
+    "搜索一下贵州茅台最近的新闻"
   ],
   "knowledge": [],
   "tools": {
@@ -37,5 +37,5 @@
       "use": true
     }
   },
-  "model": "qwen-max"
+  "model": "qwen-72b-api"
 }

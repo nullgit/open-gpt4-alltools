@@ -8,7 +8,7 @@ from modelscope_agent.tools.openapi_plugin import (OpenAPIPluginTool,
 
 from modelscope.utils.config import Config
 
-DEFAULT_AGENT_DIR = '/tmp/agentfabric'
+DEFAULT_AGENT_DIR = '/tmp/agentfabric_v1'
 DEFAULT_BUILDER_CONFIG_DIR = os.path.join(DEFAULT_AGENT_DIR, 'config')
 DEFAULT_BUILDER_CONFIG_FILE = os.path.join(DEFAULT_BUILDER_CONFIG_DIR,
                                            'builder_config.json')

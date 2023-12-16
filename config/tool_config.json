@@ -14,8 +14,9 @@
   },
   "web_browser": {
     "name": "Web Browsing",
-    "is_active": false,
-    "use": false
+    "is_active": true,
+    "use": false,
+    "max_browser_length": 2000
   },
   "amap_weather": {
     "name": "高德天气",
@@ -29,17 +30,18 @@
   },
   "web_search": {
     "name": "Web Searching",
-    "is_active": false,
-    "use": false
+    "is_active": true,
+    "use": false,
+    "searcher": "bing"
   },
   "qwen_vl": {
     "name": "Qwen-VL识图",
     "is_active": true,
     "use": false
   },
-  "modelscope_speech-generation": {
-    "name": "Speech Generation",
+  "style_repaint": {
+    "name": "人物风格重绘",
     "is_active": true,
-    "use": true
+    "use": false
   }
 }

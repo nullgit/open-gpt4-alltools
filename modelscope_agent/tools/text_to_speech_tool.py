@@ -1,6 +1,7 @@
+from modelscope.utils.constant import Tasks
 from modelscope_agent.output_wrapper import AudioWrapper
 
-from modelscope.utils.constant import Tasks
+from .localfile2url_utils.localfile2url import path2url
 from .pipeline_tool import ModelscopePipelineTool
 
 
@@ -41,4 +42,5 @@ class TexttoSpeechTool(ModelscopePipelineTool):
     def _parse_output(self, origin_result, remote=True):
 
         audio = origin_result['output_wav']
+        audio = path2url(audio, audio)
         return {'result': AudioWrapper(audio)}

@@ -6,6 +6,7 @@ markdown-cjk-spacing
 mdx_truly_sane_lists
 pymdown-extensions
 python-slugify
+unstructured
 
 dashscope
 datasets>=2.8.0
@@ -27,5 +28,3 @@ seaborn
 soundfile
 transformers>=4.29.0
 transformers_stream_generator
-
-# modelscope[audio]

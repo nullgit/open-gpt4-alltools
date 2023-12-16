@@ -11,6 +11,7 @@ from modelscope_agent.agent_types import AgentType
 from moviepy.editor import VideoFileClip
 from PIL import Image
 from requests.exceptions import RequestException
+from modelscope_agent.tools.localfile2url_utils.localfile2url import path2url
 
 
 class OutputWrapper:
@@ -119,6 +120,7 @@ class AudioWrapper(OutputWrapper):
             with open(self._path, 'wb') as f:
                 f.write(self._raw_data)
 
+        self._path = path2url(self._path)
         self._repr = f'<audio id=audio controls= preload=none> <source id=wav src={self._path}> </audio>'
 
 

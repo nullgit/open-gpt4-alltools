@@ -233,7 +233,7 @@ class AgentExecutor:
                         logger.info(
                             uuid=kwargs.get('uuid', 'default_user'),
                             message='exec_result',
-                            content={'exec_result': exec_result})
+                            content={'exec_result': exec_result, 'output': llm_result})
 
                     # parse exec result and store result to agent state
                     final_res.append(exec_result)

@@ -11,13 +11,19 @@
   ],
   "knowledge": [],
   "tools": {
-    "image_gen": {
-      "name": "Wanx Image Generation",
+    "code_interpreter": {
+      "name": "Code Interpreter",
       "is_active": true,
       "use": true
     },
-    "code_interpreter": {
-      "name": "Code Interpreter",
+    "web_search": {
+      "name": "Web Searching",
+      "is_active": true,
+      "use": true,
+      "searcher": "serper"
+    },
+    "web_browser": {
+      "name": "Web Browsing",
       "is_active": true,
       "use": true
     },
@@ -26,8 +32,8 @@
       "is_active": true,
       "use": true
     },
-    "web_browser": {
-      "name": "Web Browsing",
+    "image_gen": {
+      "name": "Wanx Image Generation",
       "is_active": true,
       "use": true
     },

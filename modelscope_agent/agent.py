@@ -151,6 +151,7 @@ class AgentExecutor:
             return self.knowledge_retrieval.retrieve(
                 query) if self.knowledge_retrieval else []
         except Exception as e:
+            import traceback
             print(
                 f'Error when retrieving knowledge: {e} and {traceback.print_exc()}'
             )
@@ -159,7 +160,7 @@ class AgentExecutor:
     def run(self,
             task: str,
             remote: bool = False,
-            print_info: bool = False,
+            print_info: bool = True,
             append_files: list = [],
             **kwargs) -> List[Dict]:
         """ use llm and tools to execute task given by user
@@ -202,7 +203,7 @@ class AgentExecutor:
                 logger.info(
                     uuid=kwargs.get('uuid', 'default_user'),
                     message=f'LLM inputs in round {idx}',
-                    content={'llm_artifacts': llm_artifacts})
+                    content={'llm_artifacts': llm_artifacts, 'output': llm_result})
 
             # parse and get tool name and arguments
             try:
@@ -250,7 +251,7 @@ class AgentExecutor:
     def stream_run(self,
                    task: str,
                    remote: bool = True,
-                   print_info: bool = False,
+                   print_info: bool = True,
                    append_files: list = [],
                    **kwargs) -> Dict:
         """this is a stream version of run, which can be used in scenario like gradio.
@@ -290,7 +291,7 @@ class AgentExecutor:
                 logger.info(
                     uuid=kwargs.get('uuid', 'default_user'),
                     message=f'LLM inputs in round {idx}',
-                    content={'llm_artifacts': llm_artifacts})
+                    content={'llm_artifacts': llm_artifacts, 'output': llm_result})
 
             llm_result = ''
             try:

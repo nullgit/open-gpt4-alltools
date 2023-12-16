@@ -14,6 +14,7 @@ class SearchResult:
 class AuthenticationKey(Enum):
     bing = 'BING_SEARCH_V7_SUBSCRIPTION_KEY'
     kuake = 'PLACE_HOLDER'
+    serper = 'SERPER_API_KEY'
 
     @classmethod
     def to_dict(cls):
@@ -33,5 +34,8 @@ def get_websearcher_cls():
     if get_env(AuthenticationKey.kuake.value):
         from modelscope_agent.tools.web_search_utils.searcher.kuake import KuakeWebSearcher
         cls_dict[AuthenticationKey.kuake.name] = KuakeWebSearcher
+    if get_env(AuthenticationKey.serper.value):
+        from modelscope_agent.tools.web_search_utils.searcher.serper import SerperWebSearcher
+        cls_dict[AuthenticationKey.serper.name] = SerperWebSearcher
 
     return cls_dict

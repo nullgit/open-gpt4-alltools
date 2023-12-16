@@ -13,11 +13,9 @@ class SerperWebSearcher(WebSearcher):
     def __init__(
         self,
         timeout=10000,
-        mkt='en-US',
         endpoint='https://google.serper.dev/search',
         **kwargs,
     ):
-        self.mkt = mkt
         self.endpoint = endpoint
         self.timeout = timeout
         self.token = os.environ.get('SERPER_API_KEY')

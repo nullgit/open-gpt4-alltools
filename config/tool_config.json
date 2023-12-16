@@ -1,9 +1,9 @@
 {
   "image_gen": {
-    "name": "Wanx Image Generation",
+    "name": "Image Generation",
     "is_active": true,
     "use": true,
-    "is_remote_tool": true
+    "is_remote_tool": false
   },
   "code_interpreter": {
     "name": "Code Interpreter",

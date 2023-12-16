@@ -33,7 +33,7 @@
       "use": true
     },
     "image_gen": {
-      "name": "Wanx Image Generation",
+      "name": "Image Generation",
       "is_active": true,
       "use": true
     },
